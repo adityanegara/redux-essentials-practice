@@ -15,11 +15,7 @@ export const AddPostForm = () => {
   const onSavePostClicked = () => {
     if (title && content) {
       dispatch(
-        postAdded({
-          id: nanoid(),
-          title,
-          content,
-        })
+        postAdded(title, content)
       )
       setTitle('')
       setContent('')
@@ -30,7 +26,7 @@ export const AddPostForm = () => {
     <section>
       <h2>Add a New Post</h2>
       <form>
-        <label htmmFor="postTitle">Post Title:</label>
+        <label htmlFor="postTitle">Post Title:</label>
         <input
           type="text"
           id="postTitle"
